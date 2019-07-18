@@ -63,7 +63,6 @@ function apiSearch(event) {
 }
 
 searchForm.addEventListener('submit', apiSearch);
-/* <p class="card-text overflow-auto" style="max-height: 250px">${overview}</p> */
 
 function addEventMedia() {
 	const media = movie.querySelectorAll('.card[data-id]');
