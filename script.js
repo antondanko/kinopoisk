@@ -104,7 +104,7 @@ function showFullInfo() {
 
 			movie.innerHTML = `
 			
-			<div class="col-12 col-lg-5 mb-5 text-center">
+			<div class="col-12 col-lg-5 mb-5 text-center pl-0">
 				<img src="${UrlPoster + output.poster_path}" alt="${output.name || output.title}" class="shadow rounded">
 			</div>
 			<div class="col-lg-7 shadow mb-5 bg-color">
