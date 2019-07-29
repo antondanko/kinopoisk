@@ -75,7 +75,11 @@ function addEventMedia() {
 function getTimeFromMins(mins) {
 	let hours = Math.trunc(mins / 60);
 	let minutes = mins % 60;
-	return hours + 'ч ' + minutes + 'мин';
+	if( hours === 0) {
+	return minutes + ' мин';
+	} else {
+		return hours + ' ч ' + minutes + ' мин';
+	}
 };
 
 function showFullInfo() {
