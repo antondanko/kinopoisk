@@ -1,6 +1,6 @@
 body {
 	padding-top: 20px;
-	background: #aaa url('./bg.png');
+	background: #aaa url('./bg.png') fixed;
 }
 
 .container-first {
