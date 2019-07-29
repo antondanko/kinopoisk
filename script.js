@@ -72,6 +72,12 @@ function addEventMedia() {
 	});
 }
 
+function getTimeFromMins(mins) {
+	let hours = Math.trunc(mins/60);
+	let minutes = mins % 60;
+	return hours + 'ч ' + minutes + 'мин';
+};
+
 function showFullInfo() {
 	let url = '';
 	if(this.dataset.type === 'movie'){
@@ -95,6 +101,7 @@ function showFullInfo() {
 			output.genres.forEach(function(item) {
 				genres += `<span class="genres">${item.name}</span>`
 			});
+			
 			movie.innerHTML = `
 			
 			<div class="col-5 mb-5">
@@ -107,7 +114,7 @@ function showFullInfo() {
 				${(genres) ? `<p>Жанр: ${genres}</p>` : ''}
 				${(output.number_of_seasons) ? `<p>Сезонов: ${output.number_of_seasons}</p>` : ''}
 				${(output.number_of_episodes) ? `<p>Серий: ${output.number_of_episodes}</p>` : ''}
-				${(output.runtime) ? `<p>Длительность в минутах: ${output.runtime}</p>` : ''}
+				${(output.runtime) ? `<p>Длительность: ${getTimeFromMins(output.runtime)}</p>` : ''}
 				${(output.budget) ? `<p>Бюджет: ${output.budget} $</p>` : ''}
 				${(output.overview) ? `<p>Описание: ${output.overview}</p>` : ''}
 				${(output.homepage) ? `<p class="text-center"><a href="${output.homepage}" target="_blank">Официальная страница - "${output.name || output.title}"</a></p>` : ''}
