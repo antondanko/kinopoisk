@@ -6,7 +6,7 @@ function apiSearch(event) {
 	event.preventDefault();
 	const searchText = document.querySelector('.form-control').value;
 	if (searchText.trim().length === 0) {
-		movie.innerHTML = '<h2 class="col-12 text-center text-danger">Поле поиска не должно быть пустым!</h2>';
+		movie.innerHTML = '<h2 class="col-12 text-center text-danger bg-color ">Поле поиска не должно быть пустым!</h2>';
 		return;
 	}
 
@@ -22,7 +22,7 @@ function apiSearch(event) {
 		.then(function (output) {
 			let inner = '';
 			if (output.results.length === 0) {
-				inner = '<h2 class="col-12 text-center text-info">Фильмов по Вашему запросу не найдено :(</h2>';
+				inner = '<h2 class="col-12 text-center text-info bg-color ">Фильмов по Вашему запросу не найдено :(</h2>';
 			}
 			output.results.forEach(function (item) {
 				let nameItem = item.name || item.title;
@@ -85,7 +85,7 @@ function showFullInfo() {
 	} else if (this.dataset.type === 'tv') {
 		url = 'https://api.themoviedb.org/3/tv/' + this.dataset.id + '?api_key=bb35183f45cf8b9b332040f3d4680726&language=ru';
 	} else {
-		movie.innerHTML = '<h2 class="col-12 text-center text-danger">Произошла ошибка, повторите позже...</h2>';
+		movie.innerHTML = '<h2 class="col-12 text-center text-danger bg-color ">Произошла ошибка, повторите позже...</h2>';
 	}
 
 	fetch(url)
@@ -107,7 +107,7 @@ function showFullInfo() {
 			<div class="col-12 col-lg-5 mb-5 text-center">
 				<img src="${UrlPoster + output.poster_path}" alt="${output.name || output.title}" class="shadow rounded">
 			</div>
-			<div class="col-lg-7 shadow mb-5">
+			<div class="col-lg-7 shadow mb-5 bg-color">
 				<h4 class="col-12 text-center text-info">${output.name || output.title}</h4>
 				${(output.vote_average) ? `<p>Рейтинг: ${output.vote_average}</p>` : ''}
 				${(output.tagline) ? `<p>Слоган: ${output.tagline}</p>` : ''}
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			return value.json();
 		})
 		.then(function (output) {
-			let inner = '<h4 class="col-12 text-center text-info mb-5">Популярное за неделю:</h4>';
+			let inner = '<h4 class="col-12 text-center text-info mb-5 bg-color ">Популярное за неделю:</h4>';
 			if (output.results.length === 0) {
 				inner = '<h2 class="col-12 text-center text-info">Фильмов по Вашему запросу не найдено :(</h2>';
 			}
