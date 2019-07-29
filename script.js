@@ -104,10 +104,10 @@ function showFullInfo() {
 			
 			movie.innerHTML = `
 			
-			<div class="col-5 mb-5">
+			<div class="col-12 col-lg-5 mb-5 text-center">
 				<img src="${UrlPoster + output.poster_path}" alt="${output.name || output.title}" class="shadow rounded">
 			</div>
-			<div class="col-7 shadow mb-5">
+			<div class="col-lg-7 shadow mb-5">
 				<h4 class="col-12 text-center text-info">${output.name || output.title}</h4>
 				${(output.vote_average) ? `<p>Рейтинг: ${output.vote_average}</p>` : ''}
 				${(output.tagline) ? `<p>Слоган: ${output.tagline}</p>` : ''}
